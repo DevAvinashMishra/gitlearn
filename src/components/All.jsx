@@ -3,7 +3,7 @@ import React from 'react'
 const All = ({data , changeStatus}) => {
     return (
         <div>
-            <ol>
+            <ol> 
                 {
                     data.map( ({value,id,status}) => {
                         return(

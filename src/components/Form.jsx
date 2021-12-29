@@ -35,8 +35,8 @@ const Form = () => {
         const allData = toDoArray.filter(task => task.status !== '')
         setFilterArray(allData)
         setCurrentTab('all')
-    }
-    
+    } 
+
     // function for filter as complete data
     const complete = () => {
         const completeData = toDoArray.filter(task => task.status === 'complete')

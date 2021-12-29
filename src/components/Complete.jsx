@@ -8,7 +8,7 @@ const Complete = ({data , changeStatus}) => {
                     data.map( ({value,id,status}) => {
                         return(
                             <li>
-                                <label>
+                                <label> 
                                     {value}
                                 </label> <button onClick={changeStatus} value={id}>{(status ==='incomplete') ? 'Complete': 'Incomplete'} Status</button>  <label> Current Status is <b>{status} </b></label>
                             </li>

@@ -12,7 +12,7 @@ const Pending = ({data , changeStatus}) => {
                                     {value}
                                 </label> <button onClick={changeStatus} value={id}>{(status ==='incomplete') ? 'Complete': 'Incomplete'} Status</button>  <label>Current Status is <b>{status} </b></label>
                             </li>
-                        )
+                        ) 
                     })
                 }
             </ol>
