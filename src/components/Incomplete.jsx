@@ -1,16 +1,21 @@
 import React from 'react'
+import { useSelector,useDispatch } from 'react-redux';
+import { statusChange } from '../reducer/toDoApp';
 
-const Incomplete = ({data , changeStatus}) => {
+const Incomplete = ({changeStatus}) => {
+    const data = useSelector(state => state.toDo);
+    const incompleteData = data.filter(task => task.status === 'incomplete')
+    const dispatch = useDispatch()
     return (
         <div>
             <ol>
                 {
-                    data.map( ({value,id,status}) => {
+                    incompleteData.map( ({value,id,status}) => {
                         return(
                             <li key={id}>
                                 <label>
                                     {value}
-                                </label> <button onClick={changeStatus} value={id}>{(status ==='incomplete') ? 'Complete': 'Incomplete'} Status</button>  <label>Current Status is <b>{status} </b></label>
+                                </label> <button onClick={()=>(dispatch(statusChange(id)))}>{(status ==='incomplete') ? 'Complete': 'Incomplete'} Status</button>  <label>Current Status is <b>{status} </b></label>
                             </li>
                         ) 
                     })

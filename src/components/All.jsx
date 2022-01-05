@@ -1,6 +1,9 @@
 import React from 'react'
-
-const All = ({data , changeStatus}) => {
+import { useSelector, useDispatch } from 'react-redux';
+import { statusChange } from '../reducer/toDoApp';
+const All = ({changeStatus}) => {
+    const data = useSelector(state => state.toDo);
+    const dispatch = useDispatch()
     return (
         <div>
             <ol> 
@@ -10,7 +13,7 @@ const All = ({data , changeStatus}) => {
                             <li key={id}>
                                 <label>
                                     {value}
-                                </label> <button onClick={changeStatus} value={id}>{(status ==='incomplete') ? 'Complete': 'Incomplete'} Status</button>  <label> Current Status is <b>{status} </b></label>
+                                </label> <button onClick={()=>(dispatch(statusChange(id)))} value={id}>{(status ==='incomplete') ? 'Complete': 'Incomplete'} Status</button>  <label> Current Status is <b>{status} </b></label>
                             </li>
                         )
                     })

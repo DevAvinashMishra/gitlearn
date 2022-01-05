@@ -9,9 +9,9 @@ const Form = ({parentCallback,toDo,save}) => {
     return (
         <div>
             <input type='text' placeholder='Enter here...' value={toDo} onChange={changeValue}/> <button onClick={saveToDo}>Add</button><br/>
-            <Link to="/all"><button>All</button></Link> 
-            <Link to="/complete"><button >Complete</button></Link> 
-            <Link to="/incomplete"><button >Incomplete</button></Link>
+            <Link to="all"><button>All</button></Link> 
+            <Link to="complete"><button >Complete</button></Link> 
+            <Link to="incomplete"><button >Incomplete</button></Link>
         </div>
     )
 }
