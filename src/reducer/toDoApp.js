@@ -9,8 +9,9 @@ const initialState = []
         return state;
       },
       statusChange : (state,action) => {
-        const objIndex = state.findIndex((val => val.id === action.payload));
-       const newArray = [...state];
+        const newState = state;
+        const objIndex = newState.findIndex((val => val.id === action.payload));
+        const newArray = [...newState];
        const changedStaus = (newArray[objIndex].status === 'complete') ? 'incomplete' : 'complete';
        newArray[objIndex].status = changedStaus;
         return state;
